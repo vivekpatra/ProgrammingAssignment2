@@ -30,11 +30,11 @@
 ## Purpose:
 ## Create special matrix objet having it's own inverse matrix. To manipulate this
 ## objet there are list of methords below:-
-##						setMatrix() - Update the matrix of the object; Also check
-##									  valid square matrix 
-##						getMatrix() - Get the matrix from the object
-##						setInverse() - Set the inverse matrix on the object 
-##						getInverse() - Get the inverse matrix from the object
+##                      setMatrix() - Update the matrix of the object; Also check
+##                                    valid square matrix 
+##                      getMatrix() - Get the matrix from the object
+##                      setInverse() - Set the inverse matrix on the object 
+##                      getInverse() - Get the inverse matrix from the object
 ## Input object(s):
 ##      x: input matrix
 ##
@@ -52,41 +52,41 @@ makeCacheMatrix <- function(x = matrix()) {
 
 		# Validate the matrix
 		if( !is.matrix(y) ) {
-            print( "Set fail: not a matrix" )
-            return( NULL )
-        }
-
+		    print( "Set fail: not a matrix" )
+		    return( NULL )
+		}
+		
 		# Checking square matrix
 		if( nrow(y) != ncol(y) ) {
-            print( "Set fail: not a square matrix" )
-            return( NULL )
-        }
-
+		    print( "Set fail: not a square matrix" )
+		    return( NULL )
+		}
+		
 		# Update matrix object on own environment
-    	x <<- y
+		x <<- y
 		
 		# Reset inverse of matrix object on own environment
-        invrsMatrx <<- NULL
+		invrsMatrx <<- NULL
     }
 
 	# Get matrix methord
-    getMatrix <- function() {
+	getMatrix <- function() {
 		x
 	}
 
 	# Set inverse matrix
-    setInverse <- function(matrix) {
+	setInverse <- function(matrix) {
 		invrsMatrx <<- matrix
 	}
 
 	# Get inverse matrix 
-    getInverse <- function() {
+	getInverse <- function() {
 		invrsMatrx
 	}
 	
 	# List of all methord to the outer environment
-    list(setMatrix = setMatrix, getMatrix = getMatrix,
-         setInverse = setInverse, getInverse = getInverse )
+	list(setMatrix = setMatrix, getMatrix = getMatrix,
+		 setInverse = setInverse, getInverse = getInverse )
 }
 
 ################################################################################
