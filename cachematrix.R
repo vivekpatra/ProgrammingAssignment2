@@ -126,12 +126,12 @@ cacheSolve <- function(x, ...) {
         return( NULL )
     }
 
-	# Calculate inverse by using R solve() function 
+    # Calculate inverse by using R solve() function 
     inverse <- solve( x$getMatrix() )
 
-	# Update inverse matrix on object
+    # Update inverse matrix on object
     x$setInverse( inverse )
     
-	## Return a matrix that is the inverse of 'x'
+    ## Return a matrix that is the inverse of 'x'
     inverse
 }
