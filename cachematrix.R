@@ -67,7 +67,7 @@ makeCacheMatrix <- function(x = matrix()) {
 		
 		# Reset inverse of matrix object on own environment
 		invrsMatrx <<- NULL
-    }
+	}
 
 	# Get matrix methord
 	getMatrix <- function() {
